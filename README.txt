@@ -1,3 +1,6 @@
+Note: VES is no longer being maintained. Please use VTK as we have added support
+for mobile architectures.
+
 
 Introduction
 ============
