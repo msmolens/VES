@@ -22,8 +22,8 @@ execute_process(COMMAND /usr/bin/xcrun -sdk iphoneos --show-sdk-path
 
 # Set compilation flags
 set(CMAKE_OSX_ARCHITECTURES "armv7;armv7s")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -miphoneos-version-min=5.0 -fvisibility=hidden -fvisibility-inlines-hidden")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -miphoneos-version-min=5.0 -fvisibility=hidden -fvisibility-inlines-hidden")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -miphoneos-version-min=8.0 -fvisibility=hidden -fvisibility-inlines-hidden")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -miphoneos-version-min=8.0 -fvisibility=hidden -fvisibility-inlines-hidden")
 
 set(CMAKE_OSX_ARCHITECTURES "${CMAKE_OSX_ARCHITECTURES}" CACHE STRING "osx architectures")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" CACHE STRING "c++ flags")

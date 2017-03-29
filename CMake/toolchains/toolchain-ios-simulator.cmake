@@ -23,12 +23,15 @@ execute_process(COMMAND /usr/bin/xcrun -sdk iphonesimulator --show-sdk-path
 # If the we are on 7.0 or higher SDK we should add simulator version min to get
 # things to compile.  This is probably more properly handled with a compiler version
 # check but this works for now.
-if(CMAKE_OSX_SYSROOT MATCHES iPhoneSimulator[7-8].[0-9].sdk)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mios-simulator-version-min=5.0")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mios-simulator-version-min=5.0")
+if(CMAKE_OSX_SYSROOT MATCHES iPhoneSimulator\([8-9]|10\).[0-9].sdk)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mios-simulator-version-min=8.0")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mios-simulator-version-min=8.0")
+elseif(CMAKE_OSX_SYSROOT MATCHES iPhoneSimulator7.[0-9].sdk)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mios-simulator-version-min=7.0")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mios-simulator-version-min=7.0")
 else()
  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000")
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D__PHONE_OS_VERSION_MIN_REQIORED=50000")  
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D__PHONE_OS_VERSION_MIN_REQUIRED=50000")
 endif()
 
 set(CMAKE_OSX_ARCHITECTURES i386)
