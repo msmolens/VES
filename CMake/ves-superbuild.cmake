@@ -178,8 +178,11 @@ endmacro()
 macro(download_curl)
   ExternalProject_Add(
     curl-download
-    GIT_REPOSITORY git://github.com/patmarion/curl.git
-    GIT_TAG origin/v7.24.0-with-cmake-patches
+    #GIT_REPOSITORY git://github.com/patmarion/curl.git
+    #GIT_TAG origin/v7.24.0-with-cmake-patches
+    #GIT_REPOSITORY git://github.com/curl/curl.git
+    GIT_REPOSITORY /Users/msmolens/dev/curl/.git
+    GIT_TAG curl-7_53_1
     SOURCE_DIR ${source_prefix}/curl
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
@@ -199,8 +202,10 @@ macro(compile_curl tag)
       -DCMAKE_INSTALL_PREFIX:PATH=${install_prefix}/${proj}
       -DCMAKE_BUILD_TYPE:STRING=${build_type}
       -DBUILD_CURL_EXE:BOOL=OFF
-      -DBUILD_CURL_TESTS:BOOL=OFF
+      -DBUILD_TESTING:BOOL=OFF
       -DCURL_STATICLIB:BOOL=ON
+      -DCMAKE_USE_OPENSSL:BOOL=OFF
+      -DCMAKE_USE_LIBSSH2:BOOL=OFF
   )
 endmacro()
 
@@ -216,7 +221,9 @@ macro(crosscompile_curl proj toolchain_file)
       -DCMAKE_BUILD_TYPE:STRING=${build_type}
       -DCURL_STATICLIB:BOOL=ON
       -DBUILD_CURL_EXE:BOOL=OFF
-      -DBUILD_CURL_TESTS:BOOL=OFF
+      -DBUILD_TESTING:BOOL=OFF
+      -DCMAKE_USE_OPENSSL:BOOL=OFF
+      -DCMAKE_USE_LIBSSH2:BOOL=OFF
       -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${toolchain_dir}/${toolchain_file}
       -C ${toolchain_dir}/curl-TryRunResults.cmake
   )

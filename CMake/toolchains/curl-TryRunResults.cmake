@@ -78,3 +78,23 @@ SET( HAVE_POLL_FINE
 SET( HAVE_POLL_FINE__TRYRUN_OUTPUT
      ""
      CACHE STRING "Output from TRY_RUN" FORCE)
+
+
+# HAVE_FSETXATTR_6
+#    indicates whether the executable would have been able to run on its
+#    target platform. If so, set HAVE_FSETXATTR_6 to
+#    the exit code (in many cases 0 for success), otherwise enter "FAILED_TO_RUN".
+# HAVE_FSETXATTR_6__TRYRUN_OUTPUT
+#    contains the text the executable would have printed on stdout and stderr.
+#    If the executable would not have been able to run, set HAVE_FSETXATTR_6__TRYRUN_OUTPUT empty.
+#    Otherwise check if the output is evaluated by the calling CMake code. If so,
+#    check what the source file would have printed when called with the given arguments.
+# The HAVE_FSETXATTR_6_COMPILE variable holds the build result for this TRY_RUN().
+
+set( HAVE_FSETXATTR_6
+     0
+     CACHE STRING "Result from TRY_RUN" FORCE)
+
+set( HAVE_FSETXATTR_6__TRYRUN_OUTPUT
+     ""
+     CACHE STRING "Output from TRY_RUN" FORCE)
