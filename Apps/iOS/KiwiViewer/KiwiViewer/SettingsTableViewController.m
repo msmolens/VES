@@ -125,7 +125,7 @@
 
   // set default if empty string
   if ([host length] == 0) {
-    host = @"http://midas3.kitware.com/midas";
+    host = @"https://midas3.kitware.com/midas";
     self.midasHostText.text = host;
   }
 

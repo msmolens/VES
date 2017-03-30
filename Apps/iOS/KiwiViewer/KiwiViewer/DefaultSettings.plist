@@ -21,7 +21,7 @@
 	<key>ClearSceneAutomatically</key>
 	<true/>
 	<key>MidasHost</key>
-	<string>http://midas3.kitware.com/midas</string>
+	<string>https://midas3.kitware.com/midas</string>
 	<key>PVRemoteHost</key>
 	<string></string>
 	<key>EnableMultisampling</key>
