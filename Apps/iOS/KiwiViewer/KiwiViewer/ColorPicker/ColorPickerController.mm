@@ -338,7 +338,7 @@
                                                LABEL_WIDTH, 
                                                LABEL_HEIGHT);
     hueSaturationValueLabel.autoresizingMask = UIViewAutoresizingNone;
-    hueSaturationValueLabel.textAlignment = UITextAlignmentRight;
+    hueSaturationValueLabel.textAlignment = NSTextAlignmentRight;
     hueSaturationValueLabel.backgroundColor = [UIColor clearColor];
     [backgroundView addSubview:hueSaturationValueLabel];
     //[hueSaturationValueLabel release];
@@ -351,7 +351,7 @@
                                  LABEL_WIDTH, 
                                  TEXT_FIELD_HEIGHT);
     _hueField.autoresizingMask = UIViewAutoresizingNone;
-    _hueField.textAlignment = UITextAlignmentCenter;
+    _hueField.textAlignment = NSTextAlignmentCenter;
     _hueField.borderStyle = UITextBorderStyleLine;
     _hueField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _hueField.returnKeyType = UIReturnKeyDone;
@@ -369,7 +369,7 @@
                                         LABEL_WIDTH, 
                                         TEXT_FIELD_HEIGHT);
     _saturationField.autoresizingMask = UIViewAutoresizingNone;
-    _saturationField.textAlignment = UITextAlignmentCenter;
+    _saturationField.textAlignment = NSTextAlignmentCenter;
     _saturationField.borderStyle = UITextBorderStyleLine;
     _saturationField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _saturationField.returnKeyType = UIReturnKeyDone;
@@ -387,7 +387,7 @@
                                        LABEL_WIDTH, 
                                        TEXT_FIELD_HEIGHT);
     _brightnessField.autoresizingMask = UIViewAutoresizingNone;
-    _brightnessField.textAlignment = UITextAlignmentCenter;
+    _brightnessField.textAlignment = NSTextAlignmentCenter;
     _brightnessField.borderStyle = UITextBorderStyleLine;
     _brightnessField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _brightnessField.returnKeyType = UIReturnKeyDone;
@@ -420,7 +420,7 @@
                                          LABEL_WIDTH, 
                                          LABEL_HEIGHT);
     redGreenBlueLabel.autoresizingMask = UIViewAutoresizingNone;
-    redGreenBlueLabel.textAlignment = UITextAlignmentRight;
+    redGreenBlueLabel.textAlignment = NSTextAlignmentRight;
     redGreenBlueLabel.backgroundColor = [UIColor clearColor];
     [backgroundView addSubview:redGreenBlueLabel];
     //[redGreenBlueLabel release];
@@ -433,7 +433,7 @@
                                  LABEL_WIDTH, 
                                  TEXT_FIELD_HEIGHT);
     _redField.autoresizingMask = UIViewAutoresizingNone;
-    _redField.textAlignment = UITextAlignmentCenter;
+    _redField.textAlignment = NSTextAlignmentCenter;
     _redField.borderStyle = UITextBorderStyleLine;
     _redField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _redField.returnKeyType = UIReturnKeyDone;
@@ -451,7 +451,7 @@
                                    LABEL_WIDTH, 
                                    TEXT_FIELD_HEIGHT);
     _greenField.autoresizingMask = UIViewAutoresizingNone;
-    _greenField.textAlignment = UITextAlignmentCenter;
+    _greenField.textAlignment = NSTextAlignmentCenter;
     _greenField.borderStyle = UITextBorderStyleLine;
     _greenField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _greenField.returnKeyType = UIReturnKeyDone;
@@ -469,7 +469,7 @@
                                   LABEL_WIDTH, 
                                   TEXT_FIELD_HEIGHT);
     _blueField.autoresizingMask = UIViewAutoresizingNone;
-    _blueField.textAlignment = UITextAlignmentCenter;
+    _blueField.textAlignment = NSTextAlignmentCenter;
     _blueField.borderStyle = UITextBorderStyleLine;
     _blueField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     _blueField.returnKeyType = UIReturnKeyDone;
@@ -489,7 +489,7 @@
                                         LABEL_WIDTH, 
                                         LABEL_HEIGHT);
     hexadecimalLabel.autoresizingMask = UIViewAutoresizingNone;
-    hexadecimalLabel.textAlignment = UITextAlignmentRight;
+    hexadecimalLabel.textAlignment = NSTextAlignmentRight;
     hexadecimalLabel.backgroundColor = [UIColor clearColor];
     [backgroundView addSubview:hexadecimalLabel];
     //[hexadecimalLabel release];
@@ -502,7 +502,7 @@
                                  HEXADECIMAL_TEXT_FIELD_WDITH, 
                                  TEXT_FIELD_HEIGHT);
     _hexField.autoresizingMask = UIViewAutoresizingNone;
-    _hexField.textAlignment = UITextAlignmentCenter;
+    _hexField.textAlignment = NSTextAlignmentCenter;
     _hexField.borderStyle = UITextBorderStyleLine;
     _hexField.keyboardType = UIKeyboardTypeASCIICapable;
     _hexField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
