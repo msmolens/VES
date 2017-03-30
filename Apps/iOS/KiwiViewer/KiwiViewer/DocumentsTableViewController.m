@@ -638,7 +638,7 @@ namespace {
 
     UIBarButtonItem *unlinkButton = [[UIBarButtonItem alloc]
                                    initWithTitle:buttonText
-                                   style:UIBarButtonItemStyleBordered 
+                                   style:UIBarButtonItemStylePlain
                                    target:self 
                                    action:@selector(unlinkDropbox)];
     self.navigationItem.rightBarButtonItem = unlinkButton;
@@ -656,7 +656,7 @@ namespace {
 
   UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc]
                                  initWithTitle:buttonText
-                                 style:UIBarButtonItemStyleBordered 
+                                 style:UIBarButtonItemStylePlain
                                  target:self 
                                  action:@selector(onMidasLogout)];
   self.navigationItem.rightBarButtonItem = logoutButton;

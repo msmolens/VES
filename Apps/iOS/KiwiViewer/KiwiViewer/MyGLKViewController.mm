@@ -135,13 +135,13 @@
 
       actionButton = [[UIBarButtonItem alloc]
         initWithTitle:[NSString stringWithUTF8String:actions[i].c_str()]
-        style:UIBarButtonItemStyleBordered
+        style:UIBarButtonItemStylePlain
         target:self
         action:@selector(onAction:)];
 
 
     [actionButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor lightGrayColor], UITextAttributeTextColor,
+      [UIColor lightGrayColor], NSForegroundColorAttributeName,
     //  [UIFont fontWithName:@"Helvetica-Bold" size:14.0], UITextAttributeFont,
       nil] forState:UIControlStateNormal];
     //[actionButton setTintColor:self.zoomToFitButton.tintColor];
