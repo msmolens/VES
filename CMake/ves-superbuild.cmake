@@ -82,8 +82,9 @@ endmacro()
 
 
 macro(install_eigen)
-  set(eigen_url http://vtk.org/files/support/eigen-3.1.2.tar.gz)
-  set(eigen_md5 bb639388192cb80f1ee797f5dbdbe74f)
+  # Eigen 3.3.3 (http://bitbucket.org/eigen/eigen/get/3.3.3.tar.gz)
+  set(eigen_url https://data.kitware.com/api/v1/file/hashsum/sha512/72f42584ed6ea8178c84eded59327254b3143acd65237a6faafc777f262aca4d0ebb44fd3d134b65558deec1136df83751dc1e4c8b78260291e08e03d0fdaf52/download)
+  set(eigen_md5 f21cee193e15e55cfd15ebbc16fc00a7)
   ExternalProject_Add(
     eigen
     SOURCE_DIR ${source_prefix}/eigen
