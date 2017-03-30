@@ -182,7 +182,7 @@ macro(download_curl)
     #GIT_TAG origin/v7.24.0-with-cmake-patches
     #GIT_REPOSITORY git://github.com/curl/curl.git
     GIT_REPOSITORY /Users/msmolens/dev/curl/.git
-    GIT_TAG curl-7_53_1
+    GIT_TAG e358a62
     SOURCE_DIR ${source_prefix}/curl
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
@@ -193,6 +193,10 @@ endmacro()
 
 macro(compile_curl tag)
   set(proj curl-${tag})
+  set(_use_darwinssl OFF)
+  if(APPLE)
+    set(_use_darwinssl ON)
+  endif()
   ExternalProject_Add(
     ${proj}
     DOWNLOAD_COMMAND ""
@@ -204,6 +208,7 @@ macro(compile_curl tag)
       -DBUILD_CURL_EXE:BOOL=OFF
       -DBUILD_TESTING:BOOL=OFF
       -DCURL_STATICLIB:BOOL=ON
+      -DCMAKE_USE_DARWINSSL:BOOL=${_use_darwinssl}
       -DCMAKE_USE_OPENSSL:BOOL=OFF
       -DCMAKE_USE_LIBSSH2:BOOL=OFF
   )
@@ -211,6 +216,10 @@ endmacro()
 
 
 macro(crosscompile_curl proj toolchain_file)
+  set(_use_darwinssl OFF)
+  if(APPLE)
+    set(_use_darwinssl ON)
+  endif()
   ExternalProject_Add(
     ${proj}
     DOWNLOAD_COMMAND ""
@@ -222,6 +231,7 @@ macro(crosscompile_curl proj toolchain_file)
       -DCURL_STATICLIB:BOOL=ON
       -DBUILD_CURL_EXE:BOOL=OFF
       -DBUILD_TESTING:BOOL=OFF
+      -DCMAKE_USE_DARWINSSL:BOOL=${_use_darwinssl}
       -DCMAKE_USE_OPENSSL:BOOL=OFF
       -DCMAKE_USE_LIBSSH2:BOOL=OFF
       -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${toolchain_dir}/${toolchain_file}
