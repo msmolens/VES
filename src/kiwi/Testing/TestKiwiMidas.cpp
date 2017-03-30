@@ -39,7 +39,7 @@ void doMidasTest(vesKiwiViewerApp::Ptr app)
 {
 
   vesMidasClient midas;
-  midas.setHost("http://midas3.kitware.com/midas");
+  midas.setHost("https://midas3.kitware.com/midas");
 
   bool useLogin = false;
   if (useLogin) {
@@ -95,11 +95,28 @@ void doMidasTest(vesKiwiViewerApp::Ptr app)
 
 
   midas.listFolderChildren(folderId);
+  folderNames = midas.folderNames();
+  folderIds = midas.folderIds();
+
+  folderName = "Misc Data";
+
+  for (size_t i = 0; i < folderNames.size(); ++i) {
+    if (folderNames[i] == folderName) {
+      folderId = folderIds[i];
+    }
+  }
+
+  if (!folderId.size()) {
+    printf("failed to find folder: %s\n", folderName.c_str());
+    return;
+  }
+
+  midas.listFolderChildren(folderId);
   itemNames = midas.itemNames();
   itemIds = midas.itemIds();
 
   std::string itemId;
-  std::string itemName = "Space Shuttle";
+  std::string itemName = "teapot.vtp";
 
   for (size_t i = 0; i < itemNames.size(); ++i) {
     if (itemNames[i] == itemName) {
@@ -142,6 +159,8 @@ int main(int argc, char *argv[])
   vesKiwiViewerApp::Ptr kiwiApp = vesKiwiViewerApp::Ptr(new vesKiwiViewerApp);
   vesKiwiTestHelper helper;
   helper.setApp(kiwiApp);
+  // FIXME
+  helper.setTesting(true);
 
   const int windowWidth = 800;
   const int windowHeight = 600;
